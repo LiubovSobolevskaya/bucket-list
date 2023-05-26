@@ -7,11 +7,9 @@ function BucketList() {
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
-
-    // TODO: Write logic to add the new bucket item to the bucket state variable
-    setBucket([...bucket.push(item)]);
-
+    setBucket([...bucket, item]);
   };
+
 
   // Function to mark bucket list item as complete
   const completeBucketItem = (id) => {
@@ -30,18 +28,8 @@ function BucketList() {
 
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
-    // TODO: Write logic that will return an array of items that doesn't contain the ID passed to this function
-    let idx = -1;
-    for (let i; i < bucket.length; i++) {
-      if (bucket.id === id) {
-        idx = i;
-      }
-    }
-    if (idx !== -1) {
-      setBucket([...bucket.splice(idx, 1)]);
-    }
-
-    // TODO: Update the bucket state variable
+    const updatedBucket = bucket.filter((item) => item.id !== id);
+    setBucket(updatedBucket);
   };
 
   // Function to edit the bucket list item
