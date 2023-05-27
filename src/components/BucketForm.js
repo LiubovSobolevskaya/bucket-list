@@ -18,7 +18,7 @@ function BucketForm(props) {
       text: input,
       eagerness: eagerness,
     });
-    console.log(props);
+    console.log(props.eagerness);
     setInput('');
     setEagerness('');
   };

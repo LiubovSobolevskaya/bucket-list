@@ -7,6 +7,9 @@ function BucketList() {
 
   // Function to add a bucket list item
   const addBucketItem = (item) => {
+    if (!item.text) {
+      return;
+    }
     setBucket([...bucket, item]);
   };
 
@@ -18,7 +21,7 @@ function BucketList() {
 
       // TODO: Write logic that marks an item as complete or incomplete when invoked
       if (item.id === id) {
-        item.complete = !item.complete;
+        item.complete = true// !item.complete;
       }
       return item;
 
