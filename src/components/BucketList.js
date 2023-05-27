@@ -18,8 +18,9 @@ function BucketList() {
 
       // TODO: Write logic that marks an item as complete or incomplete when invoked
       if (item.id === id) {
-        item.complete = true;
+        item.complete = !item.complete;
       }
+      return item;
 
     });
 

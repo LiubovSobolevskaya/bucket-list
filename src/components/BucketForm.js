@@ -4,23 +4,21 @@ function BucketForm(props) {
   const [input, setInput] = useState('');
   let [eagerness, setEagerness] = useState('');
 
-  // TODO: Use this array in the return statement below
-
   const eagernessLevel = ['high', 'medium', 'low']
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(eagerness);
     if (!eagerness) {
       eagerness = 'low';
     }
-
+    console.log(eagerness);
     props.onSubmit({
       id: Math.random(Math.floor() * 1000),
       text: input,
       eagerness: eagerness,
     });
-
+    console.log(props);
     setInput('');
     setEagerness('');
   };
